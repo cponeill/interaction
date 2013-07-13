@@ -18,7 +18,7 @@ void draw()
 
     context.update();
 
-    int[] depthValue = kinect.depthMap();
+    int[] depthValue = context.depthMap();
     for(int y = 0; y < 480; y++) {
         for(int x = 0; x < 640; x++) {
             int i = x + y * 640;
@@ -31,7 +31,7 @@ void draw()
             }
         }
      }
-     image.context(depthImage(), 0, 0);
+     image(context.depthImage(), 0, 0);
      stroke(255, 0, 0);
      line(previousX, previousY, closestX, closestY);
      previousX = closestX;
